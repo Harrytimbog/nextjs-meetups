@@ -32,7 +32,8 @@ export async function getStaticProps() {
     return {
       props: {
         meetups: DUMMY_DATA
-      }
+      },
+      revalidate: 10 // number of seconds to pregenerate / update data (depending on how much your data change)
     }
 }
 
