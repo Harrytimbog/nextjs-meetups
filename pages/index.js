@@ -27,26 +27,26 @@ function HomePage(props) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const req = context.req;
-  const res = context.res;
+// export async function getServerSideProps(context) {
+//   const req = context.req;
+//   const res = context.res;
 
-  // fetch data from an API
-  return {
-    props: {
-      meetups: DUMMY_DATA
-    }
-  }
-}
-
-// export async function getStaticProps() {
-//     // fetch data from an API
-//     return {
-//       props: {
-//         meetups: DUMMY_DATA
-//       },
-//       revalidate: 10 // number of seconds to pregenerate / update data (depending on how much your data change)
+//   // fetch data from an API
+//   return {
+//     props: {
+//       meetups: DUMMY_DATA
 //     }
+//   }
 // }
+
+export async function getStaticProps() {
+    // fetch data from an API
+    return {
+      props: {
+        meetups: DUMMY_DATA
+      },
+      revalidate: 10 // number of seconds to pregenerate / update data (depending on how much your data change)
+    }
+}
 
 export default HomePage;
