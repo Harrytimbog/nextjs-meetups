@@ -4,8 +4,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-  ### Documentation    
-
 ## Demo    
 
 [Run demo](https://nextjs-meetups-rouge.vercel.app/)
