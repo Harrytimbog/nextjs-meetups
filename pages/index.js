@@ -53,8 +53,10 @@ export async function getStaticProps() {
           id: meetup._id.toString(),
         }))
       },
-      revalidate: 10 // number of seconds to pregenerate / update data (depending on how much your data change)
-    }
-}
+      revalidate: 1,
+    };
+  }
+
+// revalidate: 10 // number of seconds to pregenerate / update data (depending on how much your data change)
 
 export default HomePage;
