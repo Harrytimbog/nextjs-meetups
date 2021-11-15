@@ -1,9 +1,20 @@
+import { Fragment } from 'react';
+import Head from 'next/head';
 import { MongoClient } from 'mongodb';
 import  MeetupList from '../components/meetups/MeetupList';
 
 function HomePage(props) {
   return (
-    <MeetupList meetups={props.meetups} />
+    <Fragment>
+      <Head>
+        <title>React Meetups</title>
+        <meta
+          name='description'
+          content='Browse a huge list of highly active React meetups!'
+        />
+      </Head>
+      <MeetupList meetups={props.meetups} />
+    </Fragment>
   );
 }
 
@@ -22,7 +33,7 @@ function HomePage(props) {
 export async function getStaticProps() {
     // fetch data from an API
     const client = await MongoClient.connect(
-      "mongodb+srv://harrytimbog:Just4u..@cluster0.5t4ke.mongodb.net/meetups?retryWrites=true&w=majority"
+      "mongodb+srv://harrie:0WPQTtlaSNMs22iH@cluster0.5t4ke.mongodb.net/meetups?retryWrites=true&w=majority"
     );
     const db = client.db();
 
